@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esmanurun Odası</title>
+    <link rel="icon" type="title_img" href="https://i.hizliresim.com/coy6kjv.jpg">
+    
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            
+        }
+
+        .room {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url(https://i.hizliresim.com/f1trkbt.jpg) no-repeat center center/cover;
+        }
+
+        .photo {
+            position: absolute;
+            width: 10vw;
+            height: 10vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
+            
+        }
+
+        #halı {
+            position: absolute;
+            width: 10vw;
+            height: 7vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        #koltuk {
+            position: absolute;
+            width: 8vw;
+            height: 5vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        /* #sehpa{
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+
+        } */
+
+        #ortasehpa{
+
+            position: absolute;
+            width: 5.3vw;
+            height: 3vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* #raf{
+            position: absolute;
+            width: 3vw;
+            height: 3vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        } */
+
+        #tv{
+            position: absolute;
+            width: 6vw;
+            height: 4.4vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* #meyve{
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        } */
+
+        #berjer{
+            position: absolute;
+            width: 5vw;
+            height: 5vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* #kitap{
+            position: absolute;
+            width: 2vw;
+            height: 1.5vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        #abajur{
+            position: absolute;
+            width: 1vw;
+            height: 1.5vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        } */
+
+        #kitaplık{
+            position: absolute;
+            width: 5vw;
+            height: 5vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        #bsaksı{
+            position: absolute;
+            width: 2vw;
+            height: 4vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* #saksı{
+            position: absolute;
+            width: 2vw;
+            height: 1w;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        #saksı1{
+            position: absolute;
+            width: 3vw;
+            height: 4vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        #saksı2{
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        } */
+
+        #saat{
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        #tablop{
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #tablo{
+            position: absolute;
+            width: 2vw;
+            height: 1.5vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        #uabajur{
+            position: absolute;
+            width: 2vw;
+            height: 6vw;
+            background-size: contain;
+            cursor: grab;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .photo[data-index="koltuk"] {
+            top: 1vw;
+            left: 1vw;
+            
+        }
+
+        /* .photo[data-index="sehpa"] {
+            top: 6vw;
+            left: 1vw;
+        } */
+
+        .photo[data-index="ortasehpa"] {
+            top: 11vw;
+            left: 1.7vw;
+        }
+        
+        /* .photo[data-index="raf"] {
+            top: 14vw;
+            left: 1.5vw;
+        } */
+
+        .photo[data-index="tv"] {
+            top: 14.5vw;
+            left: 1.5vw;
+        }
+        /* .photo[data-index="meyve"]{
+            top: 14.1vw;
+            left: 5vw;
+        } */
+
+        .photo[data-index="berjer"]{
+            top: 24.5vw;
+            left: 0.3vw;
+        }
+
+        /* .photo[data-index="kitap"]{
+            top: 29.7vw;
+            left: 6.7vw;
+        } */
+/* 
+        .photo[data-index="abajur"]{
+            top: 37vw;
+            left: 0.3vw;
+        } */
+
+        .photo[data-index="kitaplık"]{
+            top: 24.5vw;
+            left: 5vw;
+        }
+
+        /* .photo[data-index="abajur"]{
+            top: 8vw;
+            left: 1vw;
+        } */
+
+        .photo[data-index="uabajur"]{
+            top: 5.3vw;
+            left: 1.5vw
+        }
+
+        .photo[data-index="bsaksı"]{
+            top: 6vw;
+            left: 5vw;
+        }
+
+        .photo[data-index="halı"]{
+            top: 18vw;
+            left: 0.2vw;
+        }
+
+        .photo[data-index="tablo"]{
+            top: 29.8vw;
+            left: 1vw;
+        }
+
+        .photo[data-index="tablop"]{
+            top: 29.5vw;
+            left: 4vw;
+        }
+
+        /* .photo[data-index="saksı"]{
+            top: 33vw;
+            left: 0.8vw;
+        }
+
+        .photo[data-index="saksı1"]{
+            top: 35vw;
+            left: 3vw;
+        }
+
+        .photo[data-index="saksı2"]{
+            top: 35vw;
+            left: 5vw;
+        } */
+
+        .photo[data-index="saat"]{
+            top: 29.7vw;
+            left: 6.5vw;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+
+   
+    
+    <div class="room" id="room">
+        <div class="photo" id="halı" data-index="halı"  style="background-image: url(https://i.hizliresim.com/k04mwj2.jpg);"></div> <!--halı-->
+        <div class="photo" id="uabajur"data-index="uabajur" style="background-image: url(https://i.hizliresim.com/tl9gq1y.jpg);"> </div>
+        <div class="photo" id="bsaksı" data-index="bsaksı" style="background-image: url(https://i.hizliresim.com/jfllcvw.jpg);"></div>
+        <!-- <div class="photo" id="saksı" data-index="saksı" style="background-image: url(https://i.hizliresim.com/2ps9bq4.jpg);"></div>
+        <div class="photo" id="saksı1" data-index="saksı1" style="background-image: url(https://i.hizliresim.com/722w4i9.jpg);"></div>
+        <div class="photo" id="saksı2" data-index="saksı2" style="background-image: url(https://i.hizliresim.com/5eq99jh.jpg);"></div> --> 
+        
+        <div class="photo" id="koltuk" data-index="koltuk"  style="background-image: url(https://i.hizliresim.com/ahvj03c.jpg);"></div> <!--koltuk-->
+        <!-- <div class="photo" id="sehpa" data-index="sehpa" style="background-image: url(https://i.hizliresim.com/82wblx9.png);"></div> orta sehpa -->
+        <div class="photo" id="ortasehpa" data-index="ortasehpa" style="background-image: url(https://i.hizliresim.com/7b3sphl.jpg);"></div> <!--sehpa-->
+        <!-- <div class="photo" id="raf" data-index="raf" style="background-image: url(https://i.hizliresim.com/sgxnrg0.png);"></div> raf -->
+        <div class="photo" id="tv" data-index="tv" style="background-image: url(https://i.hizliresim.com/m1rlcwh.png);"></div> <!--tv-->
+        <!-- <div class="photo" id="meyve" data-index="meyve" style="background-image: url(https://i.hizliresim.com/mvbghns.jpg);"></div> meyve -->
+        <div class="photo" id="kitaplık" data-index="kitaplık" style="background-image: url(https://i.hizliresim.com/2my1mqm.jpg);"></div> 
+        <div class="photo" id="berjer" data-index="berjer" style="background-image: url(https://i.hizliresim.com/4qspo22.jpg);"></div> <!--tv-->
+        <!-- <div class="photo" id="kitap" data-index="kitap" style="background-image: url(https://i.hizliresim.com/9ko5hvf.jpg);"></div> tv -->
+        <!-- <div class="photo" id="abajur" data-index="abajur" style="background-image: url(https://i.hizliresim.com/108wqw3.jpg);"></div>  -->
+        
+        
+        <div class="photo" id="saat" data-index="saat" style="background-image: url(https://i.hizliresim.com/e3x4v62.jpg);"></div>
+        <div class="photo" id="tablop" data-index="tablop" style="background-image: url(https://i.hizliresim.com/rvty250.jpg);"></div>
+        <div class="photo" id="tablo" data-index="tablo" style="background-image: url(https://i.hizliresim.com/pzfi538.jpg);"></div>
+        
+    </div>
+
+    
+    <script>
+        const room = document.getElementById('room');
+        const photos = document.querySelectorAll('.photo');
+
+        let draggedPhoto = null;
+        let offsetX = 0, offsetY = 0;
+
+        // Sürükleme Başlangıcı
+        photos.forEach(photo => {
+            photo.addEventListener('mousedown', (e) => {
+                draggedPhoto = photo;
+                offsetX = e.offsetX;
+                offsetY = e.offsetY;
+                photo.style.cursor = 'grabbing';
+            });
+
+            photo.addEventListener('mouseup', () => {
+                draggedPhoto = null;
+                photo.style.cursor = 'grab';
+            });
+        });
+
+        // Sürükleme İşlemi
+        room.addEventListener('mousemove', (e) => {
+            if (draggedPhoto) {
+                const roomRect = room.getBoundingClientRect();
+                const x = e.clientX - roomRect.left - offsetX;
+                const y = e.clientY - roomRect.top - offsetY;
+
+                // Div'i yeni konuma taşı
+                draggedPhoto.style.left = `${x}px`;
+                draggedPhoto.style.top = `${y}px`;
+                
+                // 233px kontrolü: Sol pozisyon (left) 233 pikseli geçtiyse fotoğrafı büyüt
+                if (x > 155) {
+                    draggedPhoto.style.transform = 'scale(3)'; // Fotoğrafı %20 büyüt
+                    
+                } else {
+                    draggedPhoto.style.transform = 'scale(1.2)'; // Normal boyuta dön
+                }
+                
+                
+           
+            }
+        });
+    </script>
+</body>
+</html>
